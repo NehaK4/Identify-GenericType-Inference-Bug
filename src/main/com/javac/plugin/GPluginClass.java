@@ -49,7 +49,7 @@ public class GPluginClass implements Plugin {
 
                         public Void visitNewClass(NewClassTree node,
                                                   Void p) {
-                          if (node.isAnnotationPresent(GCheck.class)){
+                          if (node.isAnnotationPresent(InferredT.class)){
 						  setNew(node);}
                             return super.visitNewClass(node,p);
                                                  } }, null);
@@ -68,7 +68,7 @@ public class GPluginClass implements Plugin {
 
                             public Void visitWildcard(WildcardTree node,
                                                       Void p) {
-								if (node.isAnnotationPresent(GCheck.class)){					  
+								if (node.isAnnotationPresent(InferredT.class)){
                                 setWild(node);}
                                 try{
                                     validate();
